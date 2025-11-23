@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.about-page {
+  min-height: 100vh;
+  background-color: #FFEEDD;
+}
+
+.about-container {
+  padding: 40px 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.about-description {
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.about-description h2 {
+  font-size: 1.8rem;
+  color: #ff6b8b;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.about-description h2:first-child {
+  margin-top: 0;
+}
+
+.about-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.team-section {
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
+}
+
+.team-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.member-image-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 4px solid #ff6b8b;
+  flex-shrink: 0;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px 15px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, max-content); 
+    gap: 20px;
+    align-items: stretch; 
+  }
+
+  .team-card {
+    padding: 20px 15px;
+  }
+
+  .member-image-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-name {
+    font-size: 1rem;
+  }
+
+  .member-role {
+    font-size: 0.9rem;
+  }
+
+  .team-card:last-child {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 280px;
+  }
+}

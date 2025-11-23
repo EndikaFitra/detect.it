@@ -1,0 +1,77 @@
+.home-page {
+    min-height: 100vh;
+    background-color: #FFEEDD;
+  }
+  
+  .home-container {
+    padding: 40px 20px;
+  }
+  
+  .page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 40px;
+    font-weight: 600;
+    padding-top: 40px;
+  }
+
+  .highlight {
+    color: #ff6b8b;
+  }
+  
+  .detection-area {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .upload-section {
+    margin-bottom: 30px;
+  }
+  
+  .action-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .btn-detect {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    background-color: #ff6b8b;
+  }
+  
+  .btn-detect:hover:not(:disabled) {
+    background-color: #ff5a7a;
+  }
+  
+  @media (max-width: 768px) {
+    .detection-area {
+      padding: 20px;
+    }
+    
+    .page-title {
+      font-size: 2rem;
+    }
+  }
+
+  .error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+  }

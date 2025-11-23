@@ -1,0 +1,285 @@
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+.landing-page {
+  min-height: 100vh;
+  background-color: #FFEEDD;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.circle-bottom-left {
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, #FEBFCD 100%);
+  position: fixed;
+  bottom: -150px;
+  left: -120px;
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: 1;
+  transform: translate(0, 0) scale(0.7);
+  transition: transform 1.2s ease, opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.circle-top-right-1 {
+  width: 450px; 
+  height: 450px; 
+  background: linear-gradient(135deg, #FE6695 100%);
+  top: -120px; 
+  right: -150px; 
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.circle-top-right-2 {
+  width: 450px; 
+  height: 450px; 
+  background: linear-gradient(135deg, #FEBFCD 100%);
+  top: -5px; 
+  right: -180px; 
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* .landing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  position: relative;
+  z-index: 3;
+} */
+
+.landing-left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Posisi horizontal akan diatur oleh kelas .left-center dan .left-final */
+  transform: translateY(-50%); /* Tetap terpusat secara vertikal */
+  z-index: 3;
+  /* Tambahkan transisi di sini untuk pergeseran horizontal dan perubahan teks */
+  transition: left 1.2s ease-out, text-align 0.2s ease 1s;
+  text-align: center;
+  width: 100%; /* Biarkan lebar penuh agar teks di tengah dengan benar */
+  max-width: 600px; /* Batasi lebar maksimal agar tidak terlalu lebar */
+}
+
+.landing-left-wrapper {
+  pointer-events: none;
+}
+
+.landing-right {
+  position: absolute;
+  top: 50%;
+  right: 5%; /* Posisikan di kanan */
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 45%;
+  max-width: auto;
+  text-align: center;
+  /* Awalnya tersembunyi */
+  opacity: 0;
+  transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
+  transform: translateY(-50%) translateX(50px);
+}
+
+.logo-container {
+  margin-bottom: 10px;
+}
+
+.logo {
+  max-width: 400px;
+  height: auto;
+}
+
+.landing-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #F03473;
+  margin-bottom: -10px;
+}
+
+.landing-subtitle {
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: #FE6694;
+  margin-bottom: 40px;
+}
+
+.landing-description {
+  margin-bottom: 40px;
+}
+
+.landing-description p {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.landing-btn {
+  display: inline-block;
+  padding: 17px 150px;
+  background-color: #ff6b8b;
+  color: white;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.landing-btn:hover {
+  background-color: #ff5a7a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 139, 0.3);
+}
+
+.landing-btn:disabled {
+  background-color: #ffcdd9;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Transition Effect */
+.left-center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+.left-final {
+  left: 5%;
+  transform: translate(0, -50%);
+  text-align: center;
+}
+
+.right-in {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* .desc-hidden {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 0.7s ease;
+}
+
+.desc-in {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.9s ease 0.2s;
+}
+
+.btn-hidden {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 0.8s ease;
+}
+
+.btn-in {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease 0.4s;
+} */
+
+.circle-merge {
+  transform: scale(1.15);
+  transition: transform 1.3s ease;
+}
+
+.circle-bottom-left-move {
+  transform: translate(450px, -350px) scale(0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 20px; /* Jarak antara landing-left dan landing-right */
+  }
+
+  /* 2. Reset posisi landing-left dan landing-right untuk tampilan mobile */
+  .landing-left, .landing-right {
+    position: relative !important; /* Kembali ke flow normal, paksa override desktop */
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* 3. Atur transisi untuk animasi ke atas pada mobile */
+  .landing-left {
+    /* Transisi hanya untuk pergeseran vertikal */
+    transition: transform 1s ease-out;
+  }
+
+  /* 4. Tentukan posisi akhir (geser ke atas) saat fase 2 aktif */
+  .landing-page.phase2 .landing-left {
+    /* Geser elemen ke atas sebesar 100px. Sesuaikan nilainya sesuai keinginan. */
+    transform: translateY(-100px);
+  }
+  
+  /* 5. Pastikan landing-right muncul dengan halus di mobile */
+  .landing-right {
+    opacity: 0; /* Awalnya tersembunyi */
+    transition: opacity 1s ease 0.5s; /* Muncul dengan delay */
+  }
+
+  .landing-page.phase2 .landing-right {
+    opacity: 1; /* Muncul saat fase 2 */
+  }
+  
+  .landing-title {
+    font-size: 3rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .circle-top-right-1 {
+    width: 350px;
+    height: 350px; 
+    background: linear-gradient(135deg, #FE6695 100%);
+    top: -120px; 
+    right: -150px; 
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  .circle-top-right-2 {
+    width: 350px; 
+    height: 350px;
+    background: linear-gradient(135deg, #FEBFCD 100%);
+    top: -5px; 
+    right: -180px; 
+    opacity: 0.7;
+    z-index: 2;
+  }
+}
