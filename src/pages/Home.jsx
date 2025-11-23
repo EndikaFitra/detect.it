@@ -19,7 +19,7 @@ const Home = () => {
       formData.append('file', imageFile);
       
       // Panggil API backend FastAPI
-      const response = await fetch('http://localhost:8000/predict', {
+      const response = await fetch('https://fastapi-example-production-bf63.up.railway.app/predict', {
         method: 'POST',
         body: formData,
       });
