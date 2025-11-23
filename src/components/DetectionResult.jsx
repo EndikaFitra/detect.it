@@ -2,9 +2,6 @@ import React from 'react';
 import '../styles/components.css';
 
 const DetectionResult = ({ label, condition, confidence }) => {
-  // 1. Bagi nilai dari backend dengan 100 untuk mendapatkan persentase sebenarnya
-  // 2. Gunakan Number() untuk memastikan operasi pembagian berhasil
-  // 3. Terapkan toFixed(2) untuk memformatnya menjadi dua angka di belakang koma
   const actualConfidence = Number(confidence) / 100;
   const formattedConfidence = actualConfidence.toFixed(2);
 
@@ -25,7 +22,6 @@ const DetectionResult = ({ label, condition, confidence }) => {
           </div>
           <div className="result-item">
             <span className="result-label">Tingkat Kepercayaan:</span>
-            {/* Tampilkan nilai yang sudah diformat */}
             <span className="result-value">{formattedConfidence}%</span>
           </div>
         </div>
@@ -33,7 +29,6 @@ const DetectionResult = ({ label, condition, confidence }) => {
           <div 
             className="confidence-fill" 
             style={{ 
-              // Gunakan nilai asli (yang sudah dibagi 100) untuk lebar progress bar
               width: `${actualConfidence}%` 
             }}
           ></div>

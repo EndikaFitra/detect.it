@@ -129,30 +129,30 @@ body {
 
   .team-grid {
     grid-template-columns: repeat(2, max-content); 
-    gap: 20px;
+    gap: 10px;
     align-items: stretch; 
   }
 
   .team-card {
-    padding: 20px 15px;
+    padding: 15px 10px;
   }
 
   .member-image-container {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .member-name {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .member-role {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .team-card:last-child {
     grid-column: 1 / -1;
     width: 100%;
-    max-width: 280px;
+    max-width: 200px;
   }
 }

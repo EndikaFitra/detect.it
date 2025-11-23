@@ -16,17 +16,10 @@ const Landing = () => {
 
   return (
     <div className={`landing-page ${phase2 ? "phase2" : ""}`}>
-
-      {/* CIRCLE KANAN ATAS */}
       <div className={`circle circle-top-right-1 ${phase2 ? "circle-merge" : ""}`}></div>
       <div className={`circle circle-top-right-2 ${phase2 ? "circle-merge" : ""}`}></div>
-
-      {/* CIRCLE KIRI BAWAH*/}
       <div className={`circle-bottom-left ${phase2 ? "circle-bottom-left-move" : ""}`}></div>
-      
       <div className="container">
-        
-        {/* LANDING KIRI - BERDIRI SENDIRI */}
         <div className={`landing-left ${phase2 ? "left-final" : "left-center"}`}>
           <div className="logo-container">
             <Logo />
@@ -36,8 +29,6 @@ const Landing = () => {
             Smart Detection for Fruits and Vegetables
           </h2>
         </div>
-
-        {/* LANDING KANAN - BERDIRI SENDIRI */}
         <div className={`landing-right ${phase2 ? "right-in" : ""}`}>
           <div className="landing-description">
             <p>

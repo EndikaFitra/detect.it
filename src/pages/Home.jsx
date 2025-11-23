@@ -30,12 +30,10 @@ const Home = () => {
       
       const data = await response.json();
       
-      // Parse hasil dari backend
       const [fruitName, condition] = data.prediction.split('_');
       const conditionText = condition === 'fresh' ? 'Segar' : 'Busuk';
       const confidencePercent = parseFloat(data.confidence) * 100;
       
-      // Format nama buah agar lebih mudah dibaca
       const formattedFruitName = fruitName.charAt(0).toUpperCase() + fruitName.slice(1);
       
       setDetectionResult({
@@ -47,7 +45,6 @@ const Home = () => {
       console.error('Error detecting image:', err);
       setError('Gagal mendeteksi gambar. Pastikan backend berjalan dan coba lagi.');
       
-      // Fallback ke mock data jika backend tidak tersedia
       const fruits = ['Apel', 'Pisang', 'Mangga', 'Jeruk'];
       const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
       const confidence = Math.floor(Math.random() * 30) + 70; // 70-99%

@@ -25,7 +25,6 @@ const ImageUploader = ({ onImageSelected }) => {
       const stream = await navigator.mediaDevices.getUserMedia({ 
         video: { facingMode: 'environment' } 
       });
-      // Sekarang videoRef.current sudah pasti ada
       videoRef.current.srcObject = stream;
       streamRef.current = stream;
     } catch (err) {
@@ -41,12 +40,10 @@ const ImageUploader = ({ onImageSelected }) => {
         errorMessage = "Akses kamera diblokir. Pastikan aplikasi Anda berjalan di HTTPS (https://) atau localhost (http://localhost).";
       }
       alert(errorMessage);
-      // Jika gagal, kembalikan ke mode upload
       setIsCameraMode(false); 
     }
   };
 
-  // Fungsi untuk menghentikan kamera
   const stopCamera = () => {
     if (streamRef.current) {
       streamRef.current.getTracks().forEach(track => track.stop());
@@ -57,19 +54,15 @@ const ImageUploader = ({ onImageSelected }) => {
     }
   };
 
-  // useEffect untuk mengelola siklus hidup kamera
   useEffect(() => {
-    // Jika mode kamera aktif, mulai kamera
     if (isCameraMode) {
       startCamera();
     }
 
-    // Fungsi cleanup: akan dijalankan saat komponen "dibersihkan"
-    // (yaitu saat isCameraMode berubah dari true ke false, atau saat komponen di-unmount)
     return () => {
       stopCamera();
     };
-  }, [isCameraMode]); // Efek ini hanya berjalan jika isCameraMode berubah
+  }, [isCameraMode]); 
 
   const capturePhoto = () => {
     const video = videoRef.current;

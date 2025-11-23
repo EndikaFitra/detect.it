@@ -31,9 +31,9 @@ function AnimatedRoutes() {
 function PageWrapper({ children }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}    // saat masuk
-      animate={{ opacity: 1, y: 0 }}     // posisi normal
-      exit={{ opacity: 0, y: -20 }}      // saat keluar
+      initial={{ opacity: 0, y: 20 }}   
+      animate={{ opacity: 1, y: 0 }}   
+      exit={{ opacity: 0, y: -20 }}  
       transition={{ duration: 0.35 }}
       style={{ height: '100%' }}
     >

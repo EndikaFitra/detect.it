@@ -54,27 +54,16 @@
   z-index: 2;
 }
 
-/* .landing-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  position: relative;
-  z-index: 3;
-} */
-
 .landing-left {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* Posisi horizontal akan diatur oleh kelas .left-center dan .left-final */
-  transform: translateY(-50%); /* Tetap terpusat secara vertikal */
+  transform: translateY(-50%);
   z-index: 3;
-  /* Tambahkan transisi di sini untuk pergeseran horizontal dan perubahan teks */
   transition: left 1.2s ease-out, text-align 0.2s ease 1s;
   text-align: center;
-  width: 100%; /* Biarkan lebar penuh agar teks di tengah dengan benar */
-  max-width: 600px; /* Batasi lebar maksimal agar tidak terlalu lebar */
+  width: 100%; 
+  max-width: 600px; 
 }
 
 .landing-left-wrapper {
@@ -84,13 +73,12 @@
 .landing-right {
   position: absolute;
   top: 50%;
-  right: 5%; /* Posisikan di kanan */
+  right: 5%; 
   transform: translateY(-50%);
   z-index: 3;
   width: 45%;
   max-width: auto;
   text-align: center;
-  /* Awalnya tersembunyi */
   opacity: 0;
   transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
   transform: translateY(-50%) translateX(50px);
@@ -174,30 +162,6 @@
   transform: translateY(-50%) translateX(0);
 }
 
-/* .desc-hidden {
-  opacity: 0;
-  transform: translateX(120px);
-  transition: all 0.7s ease;
-}
-
-.desc-in {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.9s ease 0.2s;
-}
-
-.btn-hidden {
-  opacity: 0;
-  transform: translateX(150px);
-  transition: all 0.8s ease;
-}
-
-.btn-in {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 1s ease 0.4s;
-} */
-
 .circle-merge {
   transform: scale(1.15);
   transition: transform 1.3s ease;
@@ -218,12 +182,16 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    gap: 20px; /* Jarak antara landing-left dan landing-right */
+    gap: 20px; 
   }
 
-  /* 2. Reset posisi landing-left dan landing-right untuk tampilan mobile */
+  .logo {
+    max-width: 300px;
+    height: auto;
+  }
+
   .landing-left, .landing-right {
-    position: relative !important; /* Kembali ke flow normal, paksa override desktop */
+    position: relative !important; 
     top: auto !important;
     left: auto !important;
     right: auto !important;
@@ -233,27 +201,22 @@
     text-align: center;
   }
 
-  /* 3. Atur transisi untuk animasi ke atas pada mobile */
   .landing-left {
-    /* Transisi hanya untuk pergeseran vertikal */
     transition: transform 1s ease-out;
   }
 
-  /* 4. Tentukan posisi akhir (geser ke atas) saat fase 2 aktif */
   .landing-page.phase2 .landing-left {
-    /* Geser elemen ke atas sebesar 100px. Sesuaikan nilainya sesuai keinginan. */
     transform: translateY(-100px);
   }
   
-  /* 5. Pastikan landing-right muncul dengan halus di mobile */
   .landing-right {
-    opacity: 0; /* Awalnya tersembunyi */
-    transition: opacity 1s ease 0.5s; /* Muncul dengan delay */
+    opacity: 0;
+    transition: opacity 1s ease 0.5s;
     padding-bottom: 10px;
   }
 
   .landing-page.phase2 .landing-right {
-    opacity: 1; /* Muncul saat fase 2 */
+    opacity: 1; 
   }
   
   .landing-title {
@@ -261,6 +224,11 @@
   }
   
   .landing-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .landing-btn {
+    padding: 15px 100px;
     font-size: 1.4rem;
   }
   
