@@ -75,4 +75,9 @@
     .nav-links {
       gap: 15px;
     }
+
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+    }
   }
