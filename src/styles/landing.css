@@ -249,6 +249,7 @@
   .landing-right {
     opacity: 0; /* Awalnya tersembunyi */
     transition: opacity 1s ease 0.5s; /* Muncul dengan delay */
+    padding-bottom: 10px;
   }
 
   .landing-page.phase2 .landing-right {
