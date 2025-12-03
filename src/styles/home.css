@@ -55,6 +55,101 @@
   .btn-detect:hover:not(:disabled) {
     background-color: #ff5a7a;
   }
+
+  .recommendations-section {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .recommendation-intro {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .recommendations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Jarak antar dropdown */
+  }
+  
+  .dropdown-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Penting untuk memastikan konten tidak keluar dari sudut */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    user-select: none; /* Mencegah teks terseleksi saat diklik */
+  }
+  
+  .dropdown-header .recommendation-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+  }
+  
+  .dropdown-icon {
+    font-size: 1rem;
+    color: #2c3e50;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 1.5rem;
+  }
+  
+  .dropdown-content.open {
+    /* Gunakan nilai yang cukup besar untuk menampung konten */
+    max-height: 1000px; 
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+  }
+  
+  .recommendation-description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .recommendation-steps {
+    margin-top: 1rem;
+  }
+  
+  .recommendation-steps h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .recommendation-steps ol {
+    padding-left: 1.5rem;
+    color: #555;
+  }
+  
+  .recommendation-steps li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
   
   @media (max-width: 768px) {
     .detection-area {
@@ -63,6 +158,18 @@
     
     .page-title {
       font-size: 2rem;
+    }
+
+    .dropdown-header {
+      padding: 1rem 1.2rem;
+    }
+    
+    .dropdown-header .recommendation-title {
+      font-size: 1.1rem;
+    }
+    
+    .dropdown-content.open {
+      padding: 0 1.2rem 1.2rem 1.2rem;
     }
   }
 

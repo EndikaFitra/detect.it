@@ -11,27 +11,27 @@ const About = () => {
   const teamMembers = [
     {
       name: 'Nuril Amada',
-      role: 'Lead Developer',
+      role: 'Frontend Developer',
       image: dev1
     },
     {
       name: 'Aurelia Hapsari Dyah R.',
-      role: 'UI/UX Designer',
+      role: 'Frontend Designer',
       image: dev2
     },
     {
       name: 'Aulia Nurzahra Anantiyo',
-      role: 'Machine Learning Engineer',
+      role: 'UI/UX Designer',
       image: dev3
     },
     {
       name: 'Endika Fitra Ramadani',
-      role: 'Backend Developer',
+      role: 'Backend Developer & Model Trainer',
       image: dev4
     },
     {
       name: 'Elza Hiya Nadhifah',
-      role: 'Frontend Developer',
+      role: 'Backend Developer',
       image: dev5
     }
   ];
