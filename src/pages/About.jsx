@@ -16,7 +16,7 @@ const About = () => {
     },
     {
       name: 'Aurelia Hapsari Dyah R.',
-      role: 'Frontend Designer',
+      role: 'Frontend Developer',
       image: dev2
     },
     {
